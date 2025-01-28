@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go + Python Communication</title>
+  </head>
+  <body>
+    <h1>Click the button to get a greeting</h1>
+    <button id="greetButton">Greet</button>
+    <p id="response"></p>
+
+    <script>
+      document
+        .getElementById("greetButton")
+        .addEventListener("click", async () => {
+          const response = await fetch("/greet", { method: "GET" });
+          const data = await response.json();
+          document.getElementById("response").textContent = data.message;
+        });
+    </script>
+  </body>
+</html>
+
