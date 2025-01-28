@@ -30,7 +30,7 @@ func main() {
 	r.Use(cors.Default())
 
 	// 注册路由处理函数
-	r.GET("/greet/:name", func(c *gin.Context) {
+	r.GET("/hello/:name", func(c *gin.Context) {
 		// 从URL参数中获取name
 		name := c.Param("name")
 

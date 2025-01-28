@@ -3,6 +3,7 @@ import grpc
 from proto.helloworld import helloworld_pb2
 from proto.helloworld import helloworld_pb2_grpc
 
+# 实现 GreetingService 服务
 class Greeter(helloworld_pb2_grpc.GreeterServicer):
     def SayHello(self, request, context):
         # 构造响应消息
