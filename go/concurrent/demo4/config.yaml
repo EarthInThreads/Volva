@@ -1,0 +1,24 @@
+service:
+  name: "worker-pool-service"
+  version: "1.0.0"
+  logLevel: "info"
+  port: 8080
+
+worker:
+  poolSize: 5
+  queueSize: 100
+  rateLimit: 10.0
+  maxRetries: 3
+  taskTimeout: 5s
+  retryBackoff: 1s
+  maxConcurrent: 10
+
+monitoring:
+  enabled: true
+  metricsPort: 9090
+  tracingDsn: ""
+
+healthCheck:
+  interval: 30s
+  timeout: 5s
+

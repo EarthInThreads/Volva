@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s # 抓取间隔
+  evaluation_interval: 15s # 规则评估间隔
+
+# 告警配置（可选）
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# 告警规则文件（可选）
+rule_files:
+  # - "alert_rules.yml"
+
+# 抓取配置
+scrape_configs:
+  - job_name: "worker-pool"
+    static_configs:
+      - targets: ["localhost:9090"]
+    metrics_path: "/metrics"
+    scheme: "http"
+
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
